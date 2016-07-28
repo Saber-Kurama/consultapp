@@ -4,13 +4,14 @@ import path from 'path'
 // import language from '../code/common/language'
 
 import express from 'express'
+import history from 'connect-history-api-fallback'
 
 import webpack                         from 'webpack'
-import base_configuration              from './webpack.dev.config'
+import configuration              from './webpack.dev.config'
 
 // import application_configuration from '../code/common/configuration'
 
-const configuration = Object.assign(base_configuration)
+// const configuration = Object.assign(base_configuration)
 
 // configuration.devtool = 'inline-source-map'
 // configuration.devtool = 'inline-eval-cheap-source-map'
@@ -118,7 +119,7 @@ const configuration = Object.assign(base_configuration)
 // // http://webpack.github.io/docs/webpack-dev-server.html
 const development_server_options =
 {
-	quiet       : true, // don’t output anything to the console
+	// quiet       : true, // don’t output anything to the console
 	noInfo      : true, // suppress boring information
 	hot         : true, // adds the HotModuleReplacementPlugin and switch the server to hot mode. Note: make sure you don’t add HotModuleReplacementPlugin twice
 	inline      : true, // also adds the webpack/hot/dev-server entry
@@ -126,21 +127,24 @@ const development_server_options =
 	// You can use it in two modes:
 	// watch mode (default): The compiler recompiles on file change.
 	// lazy mode: The compiler compiles on every request to the entry point.
-	lazy        : false,
+	// lazy        : false,
 
 	// network path for static files: fetch all statics from webpack development server
-	publicPath  : configuration.output.publicPath,
+	// publicPath  : configuration.output.publicPath,
+	publicPath: '/', // 注意这个配置
 
 	headers     : { "Access-Control-Allow-Origin": "*" },
 	stats       : { colors: true }
 }
+
+
 
 const compiler = webpack(configuration)
 
 // const development_server = new webpack_development_server(compiler, development_server_options)
 
 const development_server = new express()
-
+development_server.use(history())
 development_server.use(require('webpack-dev-middleware')(compiler, development_server_options))
 development_server.use(require('webpack-hot-middleware')(compiler))
 

@@ -17,3 +17,8 @@
   |---- webpack (构建项目)             
 
 ```
+
+
+###
+reselect
+react-resolver

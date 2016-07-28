@@ -15,11 +15,11 @@ const third_party_libraries = [
     // 'intl-messageformat',
     // 'javascript-time-ago',
     // 'moment',
-    // 'react',
+    'react',
     // 'react-addons-shallow-compare',
     // 'react-dnd',
     // 'react-dnd-html5-backend',
-    // 'react-dom',
+    'react-dom',
     // 'react-intl',
     // 'react-isomorphic-render',
     // 'react-redux',
@@ -41,6 +41,8 @@ configuration.entry = {
     // webpack-assets to be written properly
     // app      : [configuration.entry.main]
 };
+
+configuration.devtool = '#source-map';
 
 configuration.output.library = '[name]_[hash]';
 configuration.output.filename = '[name].dll.js';

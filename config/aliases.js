@@ -12,7 +12,8 @@ import paths from './paths'
 const client = fs.readdirSync(paths.client)
   .filter((entry) => fs.statSync(resolve.src('client', entry)).isDirectory())
   .reduce((acc, dir) => ((acc[dir] = resolve.src('client', dir)) && acc), {})
-
+console.log('--------');
+console.log(JSON.stringify(client))
 export default {
   styles: paths.styles,
   // templates: paths.templates,

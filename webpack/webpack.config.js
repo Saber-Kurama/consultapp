@@ -6,9 +6,10 @@ var configuration = {
     target: 'web',
     name: config.name,
     context: config.paths.root,
-    entry: {
-        main: './src/client/app.js'
-    },
+    // entry: {
+    //     main: './src/client/app.js'
+    // },
+    entry: ['./src/client/app.js'],
     output: {
         // filesystem path for static files
         path: path.resolve(config.paths.root, 'build/assets'),
@@ -75,7 +76,9 @@ var configuration = {
     plugins:[
       new webpack.DefinePlugin({
 
-      })
+      }),
+      // new webpack.optimize.OccurenceOrderPlugin(true),
+      // new webpack.optimize.DedupePlugin()
     ]
 }
 module.exports = configuration

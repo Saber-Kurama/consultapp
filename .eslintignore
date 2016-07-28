@@ -5,3 +5,4 @@ doc/
 npm-debug*
 karma.conf.js
 karma.entry.js
+webpack/

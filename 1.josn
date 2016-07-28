@@ -1,0 +1,205 @@
+{
+    "target": "web",
+    "name": "yunxiweb",
+    "context": "/Users/saber/coding/work/yunxi_consult_web/src/scripts",
+    "entry": [
+        "./client"
+    ],
+    "output": {
+        "path": "/Users/saber/coding/work/yunxi_consult_web/dist/public",
+        "filename": "[name].js",
+        "chunkFilename": "chunk.[name].js",
+        "library": "ClientApp",
+        "libraryTarget": "var"
+    },
+    "resolve": {
+        "root": "/Users/saber/coding/work/yunxi_consult_web",
+        "alias": {
+            "styles": "/Users/saber/coding/work/yunxi_consult_web/src/styles",
+            "templates": "/Users/saber/coding/work/yunxi_consult_web/src/templates",
+            "fonts": "/Users/saber/coding/work/yunxi_consult_web/src/assets/fonts",
+            "icons": "/Users/saber/coding/work/yunxi_consult_web/src/assets/icons",
+            "images": "/Users/saber/coding/work/yunxi_consult_web/src/assets/images",
+            "actions": "/Users/saber/coding/work/yunxi_consult_web/src/scripts/actions",
+            "api": "/Users/saber/coding/work/yunxi_consult_web/src/scripts/api",
+            "client": "/Users/saber/coding/work/yunxi_consult_web/src/scripts/client",
+            "components": "/Users/saber/coding/work/yunxi_consult_web/src/scripts/components",
+            "layouts": "/Users/saber/coding/work/yunxi_consult_web/src/scripts/layouts",
+            "lib": "/Users/saber/coding/work/yunxi_consult_web/src/scripts/lib",
+            "pages": "/Users/saber/coding/work/yunxi_consult_web/src/scripts/pages",
+            "reducers": "/Users/saber/coding/work/yunxi_consult_web/src/scripts/reducers",
+            "routes": "/Users/saber/coding/work/yunxi_consult_web/src/scripts/routes",
+            "services": "/Users/saber/coding/work/yunxi_consult_web/src/scripts/services",
+            "store": "/Users/saber/coding/work/yunxi_consult_web/src/scripts/store"
+        },
+        "modulesDirectories": [
+            "node_modules"
+        ],
+        "extensions": [
+            "",
+            ".jsx",
+            ".js",
+            ".css",
+            ".scss",
+            ".less",
+            ".svg",
+            ".json"
+        ]
+    },
+    "resolveLoader": {
+        "modulesDirectories": [
+            "node_modules"
+        ],
+        "moduleTemplates": [
+            "*-loader",
+            "*"
+        ]
+    },
+    "module": {
+        "loaders": [
+            {
+                "test": {},
+                "loader": "json"
+            },
+            {
+                "test": {},
+                "query": {
+                    "prefix": "images/",
+                    "name": "images/[name].[ext]",
+                    "limit": 10000
+                },
+                "loader": "url"
+            },
+            {
+                "test": {},
+                "query": {
+                    "mimetype": "application/font-woff",
+                    "prefix": "fonts/",
+                    "name": "fonts/[name].[ext]",
+                    "limit": 10000
+                },
+                "loader": "url",
+                "include": [
+                    "/Users/saber/coding/work/yunxi_consult_web/node_modules",
+                    "/Users/saber/coding/work/yunxi_consult_web/src/assets/fonts"
+                ]
+            },
+            {
+                "test": {},
+                "query": {
+                    "mimetype": "application/font-woff2",
+                    "prefix": "fonts/",
+                    "name": "fonts/[name].[ext]",
+                    "limit": 10000
+                },
+                "loader": "url",
+                "include": [
+                    "/Users/saber/coding/work/yunxi_consult_web/node_modules",
+                    "/Users/saber/coding/work/yunxi_consult_web/src/assets/fonts"
+                ]
+            },
+            {
+                "test": {},
+                "query": {
+                    "mimetype": "application/octet-stream",
+                    "prefix": "fonts/",
+                    "name": "fonts/[name].[ext]",
+                    "limit": 10000
+                },
+                "loader": "url",
+                "include": [
+                    "/Users/saber/coding/work/yunxi_consult_web/node_modules",
+                    "/Users/saber/coding/work/yunxi_consult_web/src/assets/fonts"
+                ]
+            },
+            {
+                "test": {},
+                "query": {
+                    "file": {
+                        "prefix": "fonts/",
+                        "name": "fonts/[name].[ext]"
+                    },
+                    "url": {
+                        "prefix": "fonts/",
+                        "name": "fonts/[name].[ext]",
+                        "limit": 10000
+                    }
+                },
+                "loader": "file",
+                "include": [
+                    "/Users/saber/coding/work/yunxi_consult_web/node_modules",
+                    "/Users/saber/coding/work/yunxi_consult_web/src/assets/fonts"
+                ]
+            },
+            {
+                "test": {},
+                "include": [
+                    "/Users/saber/coding/work/yunxi_consult_web/node_modules",
+                    "/Users/saber/coding/work/yunxi_consult_web/src/scripts"
+                ],
+                "loader": "svg-inline"
+            }
+        ]
+    },
+    "eslint": {
+        "emitWarning": true,
+        "failOnError": false,
+        "failOnWarning": false
+    },
+    "profile": false,
+    "plugins": [
+        {
+            "preferEntry": true
+        },
+        {},
+        {
+            "definitions": {
+                "__QUIET__": false,
+                "__VERBOSE__": false,
+                "__PROFILE__": false,
+                "__DEBUG__": false,
+                "__DEVTOOLS__": true,
+                "__PRODUCTION__": false,
+                "__STAGING__": false,
+                "__TEST__": false,
+                "__DEVELOPMENT__": true,
+                "settings": {
+                    "apiRoot": "\"http://consult.yunxichina.cn/api\"",
+                    "webRoot": "\"http://consult.yunxichina.cn\"",
+                    "consultRoot": "\"http://consult.yunxichina.cn/consult/\"",
+                    "session": {
+                        "ttl": 86400000
+                    },
+                    "weixinAppid": "\"wx5f5957770d03058d\""
+                },
+                "process.env": {
+                    "NODE_ENV": "\"development\""
+                },
+                "__CLIENT__": true,
+                "__SERVER__": false
+            }
+        },
+        {
+            "options": {
+                "template": "/Users/saber/coding/work/yunxi_consult_web/src/index.html",
+                "filename": "index.html",
+                "hash": false,
+                "inject": "body",
+                "compile": true,
+                "favicon": false,
+                "minify": false,
+                "cache": true,
+                "showErrors": true,
+                "chunks": "all",
+                "excludeChunks": [],
+                "title": "Webpack App",
+                "xhtml": false
+            }
+        },
+        {},
+        {}
+    ],
+    "debug": false,
+    "cache": true,
+    "devtool": "cheap-module-inline-source-map"
+}
