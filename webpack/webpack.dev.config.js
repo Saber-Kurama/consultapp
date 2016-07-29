@@ -13,7 +13,10 @@ import {
 } from '../config'
 
 let configuration = merge({}, base_configuration, {
-    // devtool: 'cheap-module-inline-source-map',
+    entry: [
+      'webpack-hot-middleware/client?path=http://127.0.0.1:3001/__webpack_hmr'
+    ],
+    devtool: 'cheap-module-inline-source-map',
     output: {
       publicPath: '/'
     },
@@ -30,7 +33,31 @@ let configuration = merge({}, base_configuration, {
                 'css?modules&importLoaders=2&localIdentName=[name]-[local]--[hash:base64:5]',
                 'postcss'
             ]
+        },{
+          test: /\.css$/,
+          include: [
+              /node_modules\/antd/
+          ],
+          loaders: [
+              'style',
+              'css',
+              // 'css?modules&importLoaders=2&localIdentName=[name]-[local]--[hash:base64:5]',
+              // 'postcss'
+          ]
         }, {
+          test: /\.less$/,
+          include: [
+              /node_modules\/antd/
+          ],
+          loaders: [
+              'style',
+              'css',
+              'postcss',
+              'less'
+              // 'css?modules&importLoaders=2&localIdentName=[name]-[local]--[hash:base64:5]',
+              // 'postcss'
+          ]
+        },{
             test: /\.scss$/,
             include: [
                 paths.styles,

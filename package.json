@@ -10,17 +10,23 @@
   "homepage": "",
   "dependencies": {
     "connect-history-api-fallback": "^1.2.0",
+    "core-decorators": "0.12.3",
     "history": "^3.0.0",
     "express": "^4.14.0",
+    "framework7": "^1.4.2",
     "immutable": "^3.8.1",
     "isomorphic-fetch": "^2.2.1",
     "lodash": "^4.14.0",
+    "map-obj": "^1.0.1",
     "normalizr": "^2.2.1",
     "react": "^15.2.1",
+    "react-css-modules": "^3.7.9",
     "react-dom": "^15.2.1",
+    "react-helmet": "^3.1.0",
     "react-redux": "^4.4.5",
     "react-resolver": "^3.0.2",
     "react-router": "^2.6.0",
+    "react-weui": "^0.4.0",
     "redux": "^3.5.2",
     "redux-thunk": "^2.1.0",
     "reselect": "^2.5.3"
@@ -45,6 +51,7 @@
     "babel-register": "^6.11.5",
     "babel-relay-plugin": "^0.9.2",
     "babel-runtime": "^6.9.1",
+    "cssnano": "^3.7.3",
     "css-loader": "^0.23.1",
     "html-webpack-plugin": "^2.22.0",
     "eslint": "^3.1.1",
@@ -59,9 +66,13 @@
     "file-loader": "^0.9.0",
     "json-loader": "^0.5.4",
     "jsx-loader": "^0.13.2",
+    "less": "^2.7.1",
+    "less-loader": "^2.2.3",
     "node-sass": "^3.8.0",
     "npm-run-all": "^2.3.0",
     "nodemon": "^1.10.0",
+    "postcss-cssnext": "^2.7.0",
+    "postcss-loader": "^0.9.1",
     "react-hot-loader": "^3.0.0-beta.2",
     "react-transform-catch-errors": "^1.0.2",
     "react-transform-hmr": "^1.0.4",
@@ -80,10 +91,11 @@
     "webpack-merge": "^0.14.1"
   },
   "scripts": {
-    "dev": "npm-run-all --parallel development-client development-server",
-    "development-client": "npm-run-all update-relay-schema development-client-webpack-dll development-client-webpack",
+    "dev": "npm-run-all --parallel development-client",
+    "development-client": "npm-run-all development-client-webpack-dll development-client-webpack",
     "development-client-webpack-dll": "webpack --color --display-error-details --config \"webpack/webpack.dll.entry.js\"",
-    "development-client-webpack": "node --harmony -- \"webpack/development server.entry.js\""
+    "development-client-webpack": "node --harmony -- \"webpack/development server.entry.js\"",
+    "lint:fix": "eslint \"src/client\" --fix"
   },
   "betterScripts": {
 

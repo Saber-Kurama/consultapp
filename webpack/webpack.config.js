@@ -1,6 +1,7 @@
 import path from 'path'
 import webpack from 'webpack'
 import config from '../config'
+import postcss from './postcss'
 
 var configuration = {
     target: 'web',
@@ -34,6 +35,7 @@ var configuration = {
             '.scss',
             '.less',
             '.svg',
+            '.png',
             '.json'
         ],
     },
@@ -79,6 +81,7 @@ var configuration = {
       }),
       // new webpack.optimize.OccurenceOrderPlugin(true),
       // new webpack.optimize.DedupePlugin()
-    ]
+    ],
+    postcss
 }
 module.exports = configuration
