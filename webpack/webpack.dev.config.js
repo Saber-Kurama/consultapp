@@ -66,7 +66,10 @@ let configuration = merge({}, base_configuration, {
             loaders: [
                 'style',
                 'css?modules&localIdentName=[name]-[local]--[hash:base64:5]',
-                `sass`
+                //?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]
+                'postcss',
+                'sass?includePaths[]=' + path.resolve(__dirname, '../assets/styles'),
+                path.resolve(__dirname, 'inject-global-scss')
             ]
         }, {
             test: /\.jsx?$/,

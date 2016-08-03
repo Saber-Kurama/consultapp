@@ -9,7 +9,12 @@ import createRoutes from 'routes/index'
 import { Provider } from 'react-redux'
 import Immutable from 'immutable'
 import each from 'lodash/each'
+import injectTapEventPlugin from 'react-tap-event-plugin'
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
+import getMuiTheme from 'material-ui/styles/getMuiTheme'
+import 'styles/index.scss'
 
+injectTapEventPlugin()
 let reduxState = {}
 if (window.__REDUX_STATE__) {
   try {
@@ -22,9 +27,15 @@ if (window.__REDUX_STATE__) {
 }
 
 const store = configureStore(reduxState)
-
+const muiTheme = getMuiTheme({
+  button:{
+    height: hotcss.px2rem(80, 750) * hotcss.fontSize
+  }
+})
 ReactDOM.render((
   <Provider store={store}>
-    {createRoutes(browserHistory)}
+    <MuiThemeProvider muiTheme={muiTheme}>
+      {createRoutes(browserHistory)}
+    </MuiThemeProvider>
   </Provider>
 ), document.getElementById('root'))

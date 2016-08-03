@@ -147,7 +147,7 @@ const development_server = new express()
 development_server.use(history())
 development_server.use(require('webpack-dev-middleware')(compiler, development_server_options))
 development_server.use(require('webpack-hot-middleware')(compiler))
-
+development_server.use(express.static(path.join(__dirname ,'../assets')));
 development_server.listen('3001', (error) =>
 {
 	if (error)

@@ -1,4 +1,5 @@
 import {  postcss } from '../config';
+import path from 'path'
 
 const {
     cssnext,
@@ -6,5 +7,13 @@ const {
 
 
 export default (bundler) => [
-  require('postcss-cssnext')(cssnext)
+
+
+  require('postcss-cssnext')(cssnext),
+  // require('postcss-sassy-mixins')({
+  //   mixinsFiles: path.join(__dirname, '../assets/styles/mixins/px.scss')
+  // })
+  // require('postcss-mixins')({
+  //   mixinsFiles: path.join(__dirname, '../assets/styles/mixins/px.scss')
+  // })
 ];

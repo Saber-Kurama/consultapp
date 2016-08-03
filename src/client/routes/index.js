@@ -9,8 +9,9 @@ import pages from '../pages';
 export default function(history) {
   return (
     <Router history={history}>
-      <Route path="/" component={pages.App}>
+      <Route path="/">
         <IndexRoute component={pages.Intro} />
+        <Route path="login" component={pages.Login} />
       </Route>
     </Router>
   );

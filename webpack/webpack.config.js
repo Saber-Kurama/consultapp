@@ -1,5 +1,6 @@
 import path from 'path'
 import webpack from 'webpack'
+import sass from 'node-sass'
 import config from '../config'
 import postcss from './postcss'
 
@@ -82,6 +83,14 @@ var configuration = {
       // new webpack.optimize.OccurenceOrderPlugin(true),
       // new webpack.optimize.DedupePlugin()
     ],
+    sassLoader: {
+      //includePaths: [path.resolve(__dirname, "./some-folder")]
+      functions: {
+        'px2rem($px)': function(px) {
+          return new sass.types.String(parseFloat(px.getValue())*320/750/20 + 'rem');
+        }
+      }
+    },
     postcss
 }
 module.exports = configuration
