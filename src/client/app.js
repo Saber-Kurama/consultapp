@@ -15,11 +15,11 @@ import getMuiTheme from 'material-ui/styles/getMuiTheme'
 import 'styles/index.scss'
 
 injectTapEventPlugin()
-let reduxState = {}
+const reduxState = {}
 if (window.__REDUX_STATE__) {
   try {
-    let plain = JSON.parse(unescape(__REDUX_STATE__))
-    each(plain, (val, key)=> {
+    const plain = JSON.parse(unescape(__REDUX_STATE__))
+    each(plain, (val, key) => {
       reduxState[key] = Immutable.fromJS(val)
     })
   } catch (e) {

@@ -1,0 +1,11 @@
+// 基本变量
+:root{
+  --baseBackground: #ececec;
+  --baseColor: #55c2d9;
+  --textColor: #666;
+  --disableColor: #ccc;
+  --baseTextSize: 16px;
+  --maxTextSize: var(--baseTextSize * 1.2);
+  --minTextSize: var(--baseTextSize * .7);
+
+}

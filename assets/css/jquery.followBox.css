@@ -1,0 +1,6 @@
+.followBox{line-height: 1.5; background: #f0f0f0; border-radius: .1rem; -webkit-filter: drop-shadow(0px 0px 3px rgba(0, 0, 0, 0.3)); filter: drop-shadow(0px 0px 3px rgba(0, 0, 0, 0.3)); position: absolute; display: none; height: auto; padding: .1rem .2rem; text-align: left; box-sizing: border-box; z-index: 999;}
+.followBox:before{content: ""; width: .4rem; height: .4rem; background: #f0f0f0; position: absolute; left: 50%; -webkit-transform: translateX(-50%) rotate(45deg); transform:  translateX(-50%) rotate(45deg); z-index: -1;}
+.followBox.down:before{top: -0.1rem;}
+.followBox.up:before{bottom: -0.1rem;}
+.followBox a.close{display: block; position: absolute; top: -12px; right: -12px; width: 25px; height: 25px; line-height: 25px; border-radius: 100%; background: #D20; border: 2px solid #FFF; box-shadow: 0 0 5px rgba(0, 0, 0, 0.5); text-align: center;}
+.followBox a.close:before{content: "×"; color: #FFF; font-size: 20px; font-weight: bold;}

@@ -3,7 +3,7 @@ import webpack from 'webpack'
 import sass from 'node-sass'
 import config from '../config'
 import postcss from './postcss'
-
+console.log(config.globals)
 var configuration = {
     target: 'web',
     name: config.name,
@@ -78,7 +78,7 @@ var configuration = {
     },
     plugins:[
       new webpack.DefinePlugin({
-
+          ...config.globals
       }),
       // new webpack.optimize.OccurenceOrderPlugin(true),
       // new webpack.optimize.DedupePlugin()

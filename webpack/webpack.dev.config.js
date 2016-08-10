@@ -47,7 +47,7 @@ let configuration = merge({}, base_configuration, {
         }, {
           test: /\.less$/,
           include: [
-              /node_modules\/antd/
+              /node_modules(\/|\\)antd/,
           ],
           loaders: [
               'style',

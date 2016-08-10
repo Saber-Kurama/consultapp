@@ -44,3 +44,8 @@ coverage
 # ignore local machine configuration
 /configuration.js
 /knexfile.js
+
+# webstorm
+.idea
+
+.env

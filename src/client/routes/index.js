@@ -11,6 +11,7 @@ export default function(history) {
     <Router history={history}>
       <Route path="/">
         <IndexRoute component={pages.Intro} />
+	<Route path="expertAndDoctor" component={pages.ExpertAndDoctor}/>
         <Route path="login" component={pages.Login} />
       </Route>
     </Router>
